@@ -1,16 +1,25 @@
 <template>
   <div id="app">
-   <Count></Count>
+    <CounterGroug ></CounterGroug>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 import Count from './components/count.vue'
+import CounterGroug from './components/CounterGroup'
 export default {
   name: 'app',
   components: {
-    Count
+    Count,
+    CounterGroug
+  },
+  data(){
+      return {
+         counter:0 
+      }
+  },
+  methods:{
+   
   }
 }
 </script>
