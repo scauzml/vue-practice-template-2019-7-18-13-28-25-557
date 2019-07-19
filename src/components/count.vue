@@ -11,7 +11,7 @@
 <script>
 export default {
   name: "count",
-
+  props:['number'],
   data() {
     return {
       a: 0,
@@ -20,10 +20,11 @@ export default {
   methods: {
     increase() {
       this.a++;
-      
+      this.$emit("putNum",1);
     },
     descease() {
       this.a--;
+       this.$emit("putNumtoDown",1);
     }
   }
 };

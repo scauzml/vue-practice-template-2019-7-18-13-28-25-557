@@ -1,23 +1,28 @@
 <template>
-  <div class="counterGroub">
+  <div class="counterGroub" >
     <input type="text" v-model.number="counterNum" >
-    <button @click="build">点击</button>
     <div v-for="dd in counterNum" :key="dd" >
-       <Count></Count>
-    </div>
+       <Count @putNum="toSum" @putNumtoDown="toDown"></Count>
+    </div>   
+    <CounterSum v-bind:sum1="sum"></CounterSum>
   </div>
+
 </template>
 
 <script>
 import Count from './count'
+import CounterSum from './CounterSum '
+
 export default {
   name: 'countgroub',
   components:{
-    Count
+    Count,
+    CounterSum
   },
   data(){
       return {
-              counterNum:0
+              counterNum:0,
+              sum:0
       }
   },
   methods: {
@@ -25,8 +30,11 @@ export default {
     //   this.$emit("sendcouter", this.counterNum) 
 
     // }
-    build(){
-
+    toSum(){
+      this.sum+=1
+    },
+    toDown(){
+        this.sum-=1;
     }
   }
 
