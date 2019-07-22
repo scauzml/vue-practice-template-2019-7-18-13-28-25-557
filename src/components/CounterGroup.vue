@@ -2,9 +2,9 @@
   <div class="counterGroub" >
     <input type="text" v-model.number="counterNum" >
     <div v-for="dd in counterNum" :key="dd" >
-       <Count @putNum="toSum" @putNumtoDown="toDown"></Count>
+       <Count></Count>
     </div>   
-    <CounterSum v-bind:sum1="sum"></CounterSum>
+    <CounterSum></CounterSum>
   </div>
 
 </template>
@@ -21,21 +21,8 @@ export default {
   },
   data(){
       return {
-              counterNum:0,
-              sum:0
+         counterNum:0  
       }
-  },
-  methods: {
-    // enter () {
-    //   this.$emit("sendcouter", this.counterNum) 
-
-    // }
-    toSum(){
-      this.sum+=1
-    },
-    toDown(){
-        this.sum-=1;
-    }
   }
 
 }

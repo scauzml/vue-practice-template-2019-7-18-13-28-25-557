@@ -11,21 +11,22 @@
 <script>
 export default {
   name: "count",
-  props:['number'],
+  
   data() {
     return {
-      a: 0,
-    };
+      a:0
+    }
   },
   methods: {
     increase() {
-      this.a++;
-      this.$emit("putNum",1);
+    this.a++;
+    this.$store.commit('increment')
     },
     descease() {
       this.a--;
-       this.$emit("putNumtoDown",1);
-    }
+       this.$store.commit('uncrement')
+    },
+   
   }
 };
 </script>

@@ -5,17 +5,17 @@
 </template>
 
 <script>
-import Count from './components/count.vue'
+
 import CounterGroug from './components/CounterGroup'
 export default {
   name: 'app',
   components: {
-    Count,
     CounterGroug
+    
   },
   data(){
       return {
-         counter:0 
+       
       }
   },
   methods:{

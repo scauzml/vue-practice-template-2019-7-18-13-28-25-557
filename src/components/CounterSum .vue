@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
     <div>
-     和{{sum1}}
+     和{{sum}}
     </div>
   </div>
 </template>
@@ -9,14 +9,17 @@
 <script>
 export default {
   name: "CounterSum",
-  props:{
-      sum1:Number
-  },
+
   data() {
     return {
      
     };
   },
+  computed:{
+    sum(){
+      return this.$store.getters.getSum;
+    }
+  }
   
 };
 </script>
